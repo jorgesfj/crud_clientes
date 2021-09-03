@@ -1,0 +1,23 @@
+<%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/navbar.ejs')%>
+    <div class="container">
+        <br><br>
+        <h1 class="display-4 fw-normal" style="text-align: center;">Criar Cliente</h1>
+        <br><br><hr>
+
+        <form action="/clientes/create" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" required name="nome" id="nome" class="form-control">
+
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" required name="sobrenome" id="sobrenome" class="form-control">
+
+            <label for="idade">Idade</label>
+            <input type="text" required name="idade" id="idade" class="form-control">
+            <br>
+            <button class="btn btn-success form-control" type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+<%- include('./partials/footer.ejs')%>

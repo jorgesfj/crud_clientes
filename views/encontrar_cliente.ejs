@@ -1,0 +1,49 @@
+<%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/navbar.ejs')%>
+    <div class="container">
+        <br><br>
+        <h1 class="display-4 fw-normal" style="text-align: center;">Buscar Clientes</h1>
+        <br><br><hr>
+        <form action="/clientes/id" method="post">
+            <div class="row">
+                <div class="col"><p> Digite o id do cliente: </p></div>
+                <div class="col">
+                    <input type="text" name="id" id="id" class="form-control">
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </div>
+        </form>
+        <%if(cliente != "null") {%>
+            <%if(cliente == undefined){%>
+                <div class="card">
+                    <h4>Não Existe um Cliente com este ID</h4>
+                </div>
+            <%}else{%>
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Nome: <%=cliente.nome%></h4>
+                        <h4>ID: <%=cliente.id%></h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col"><h4>Sobrenome: <%=cliente.sobrenome%></h4></div>
+                        <div class="col"><h4>Idade: <%=cliente.idade%></h4></div>
+                        <br>
+                    </div>
+                    <div class="row">
+                        <div class="col"><h6>Data Criação: <%=cliente.data_criacao%></h6></div>
+                        <div class="col"><h6>Data Atualizacao: <%=cliente.data_atualizacao%></h6></div>
+                        <br>
+                    </div>
+                </div>
+            <%}%>
+        <%}%>
+    </div>
+
+
+</body>
+<%- include('./partials/footer.ejs')%>

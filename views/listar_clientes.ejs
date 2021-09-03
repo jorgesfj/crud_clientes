@@ -1,0 +1,43 @@
+<%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/navbar.ejs')%>
+    <div class="container">
+        <br><br>
+        <h1 class="display-4 fw-normal" style="text-align: center;">Lista de Clientes</h1>
+        <br><br><hr>
+        <%clientes.forEach(cliente => {%>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Nome: <%=cliente.nome%></h4>
+                    <h4>ID: <%=cliente.id%></h4>
+                    <form action="/atualizar" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="<%=cliente.id%>">
+                        <input type="hidden" name="nome" value="<%=cliente.nome%>">
+                        <input type="hidden" name="sobrenome" value="<%=cliente.sobrenome%>">
+                        <input type="hidden" name="idade" value="<%=cliente.idade%>">
+                        <input type="hidden" name="criacao" value="<%=cliente.data_criacao%>">
+                        <button class="btn btn-warning">Editar</button>
+                    </form>
+
+                    <a class="btn btn-danger" href="/clientes/delete/<%=cliente.id%>">Deletar</a>
+                    
+                
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col"><h4>Sobrenome: <%=cliente.sobrenome%></h4></div>
+                        <div class="col"><h4>Idade: <%=cliente.idade%></h4></div>
+                        <br>
+                    </div>
+                    <div class="row">
+                        <div class="col"><h6>Data Criação: <%=cliente.data_criacao%></h6></div>
+                        <div class="col"><h6>Data Atualizacao: <%=cliente.data_atualizacao%></h6></div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        <%})%>
+    </div>
+</body>
+<%- include('./partials/footer.ejs')%>

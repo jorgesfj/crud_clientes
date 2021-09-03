@@ -1,0 +1,24 @@
+<%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/navbar.ejs')%>
+    <div class="container">
+        <br><br>
+        <h1 class="display-4 fw-normal" style="text-align: center;">Atualizar Cliente</h1>
+        <br><br><hr>
+
+        <form action="/atualizar/cliente" method="POST">
+            <input type="hidden" name="id" value="<%=cliente.id%>">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" value="<%=cliente.nome%>" class="form-control" >
+
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" id="sobrenome" value="<%=cliente.sobrenome%>" class="form-control">
+
+            <label for="idade">Idade</label>
+            <input type="text" name="idade" id="idade" value="<%=cliente.idade%>" class="form-control">
+            <br>
+            <button class="btn btn-success form-control" type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+<%- include('./partials/footer.ejs')%>
