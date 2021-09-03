@@ -30,7 +30,7 @@ Atualizar Cliente:
     PATCH http://localhost:8080/api/clientes/ID
 
 Deletar Cliente:
-    http://localhost:8080/api/user/13
+    DELETE http://localhost:8080/api/user/13
 
 
 ## ✒️ Autor
